@@ -1,0 +1,4 @@
+archivo de ejemplo 
+git init 
+git --global user.name "AlexanderMaga"
+git config --global user.email "hmaganao2200@alumno.ipn.mx"
