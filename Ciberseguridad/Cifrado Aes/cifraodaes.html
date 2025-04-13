@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cifrado AES</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #150016, #4b0147);
+      color: #fff;
+      text-align: center;
+      padding: 40px;
+    }
+    .container {
+      background-color: #FFE4D9;
+      color: black;
+      padding: 30px;
+      border-radius: 20px;
+      display: inline-block;
+    }
+    input, button {
+      margin: 10px;
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      font-size: 16px;
+    }
+    input[type="file"] {
+      background-color: #fff;
+    }
+    input[type="password"] {
+      width: 60%;
+    }
+    button {
+      background-color: #150016;
+      color: white;
+      cursor: pointer;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Aplicación de Cifrado y Descifrado AES</h1>
+
+    <button onclick="showSection('encrypt')">Cifrar archivo</button>
+    <button onclick="showSection('decrypt')">Descifrar archivo</button>
+
+    <div id="encryptSection" class="hidden">
+      <h2>Subir archivo a cifrar</h2>
+      <input type="file" id="fileToEncrypt"><br>
+      <input type="password" id="keyToEncrypt" placeholder="Clave (mínimo 4 caracteres)"><br>
+      <button onclick="encryptFile()">Cifrar y descargar</button>
+    </div>
+
+    <div id="decryptSection" class="hidden">
+      <h2>Subir archivo a descifrar</h2>
+      <input type="file" id="fileToDecrypt"><br>
+      <input type="password" id="keyToDecrypt" placeholder="Clave (mínimo 4 caracteres)"><br>
+      <button onclick="decryptFile()">Descifrar y descargar</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
