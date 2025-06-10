@@ -1,5 +1,5 @@
-create database jwt_db;
-use jwt_db;
+create database jwt_bd;
+use jwt_bd;
 
 
 create table usuarios(
