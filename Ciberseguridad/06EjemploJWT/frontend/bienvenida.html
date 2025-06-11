@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Inicio de sesión</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #150016, #4b0147);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100vh;
+      padding: 20px;
+    }
+
+    .back-button {
+      align-self: flex-start;
+      margin-bottom: 20px;
+      background-color: #FFE4D9;
+      color: #150016;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .back-button:hover {
+      background-color: #dcbfb1;
+      transform: scale(1.05);
+    }
+
+    .sesion-container {
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+      width: 100%;
+      max-width: 400px;
+      text-align: left;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 32px;
+      color: #FFE4D9;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 16px;
+      color: #FFE4D9;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      border: none;
+      margin-bottom: 20px;
+      background-color: #fff;
+      color: #000;
+      font-size: 16px;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: center;
+    }
+
+    .option-button {
+      padding: 12px 30px;
+      border: none;
+      border-radius: 15px;
+      font-size: 18px;
+      background-color: #FFE4D9;
+      color: #150016;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .option-button:hover {
+      background-color: #dcbfb1;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <button class="back-button" onclick="location.href='index.html'">← Regresar</button>
+
+  <div class="sesion-container">
+    <h1>Inicio de sesión</h1>
+    <form id="loginForm">
+      <div class="form-group">
+        <label for="name">Nombre</label>
+        <input type="text" id="name" name="name" required />
+      </div>
+      <div class="form-group">
+        <label for="password">Contraseña</label>
+        <input type="password" id="password" name="password" required />
+      </div>
+      <div class="button-container">
+        <input type="submit" value="Iniciar sesión" class="option-button" />
+      </div>
+    </form>
+  </div>
+
+  <!-- Validación -->
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function (event) {
+      const name = document.getElementById("name").value.trim();
+      const password = document.getElementById("password").value;
+      const soloLetras = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/;
+
+      if (!name || !password) {
+        alert("Por favor, completa todos los campos.");
+        event.preventDefault();
+        return;
+      }
+
+      if (!soloLetras.test(name)) {
+        alert("El nombre solo debe contener letras.");
+        event.preventDefault();
+        return;
+      }
+    });
+  </script>
+</body>
+</html>

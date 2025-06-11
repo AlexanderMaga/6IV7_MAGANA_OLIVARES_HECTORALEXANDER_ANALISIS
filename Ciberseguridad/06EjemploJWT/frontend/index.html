@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Menu</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #150016, #4b0147);
+      color: #fff;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    h1 {
+      margin-bottom: 40px;
+      font-size: 36px;
+      color: #FFE4D9;
+    }
+
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      max-width: 400px;
+      margin: auto;
+    }
+
+    .option-button {
+      padding: 15px;
+      border: none;
+      border-radius: 15px;
+      font-size: 18px;
+      background-color: #FFE4D9;
+      color: #150016;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .option-button:hover {
+      background-color: #dcbfb1;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Inicio</h1>
+<p>
+    Magaña Olivares Hector Alexander <br>
+    6IV7 <br>
+    2023090562 <br>
+</p>
+  
+<div class="button-container">
+    <button class="option-button" onclick="location.href='bienvenida.html'">Bienvenida</button>
+    <button class="option-button" onclick="location.href='register.html'">Registrarse</button>
+</div>
+
+</body>
+</html>
